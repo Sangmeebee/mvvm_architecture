@@ -1,4 +1,4 @@
-package com.sangmee.mvvmarchitecture.model
+package com.sangmee.mvvmarchitecture.data.model
 
 data class Item(
     val actor: String,

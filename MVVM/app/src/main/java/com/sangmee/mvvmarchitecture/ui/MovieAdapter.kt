@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.sangmee.mvvmarchitecture.R
-import com.sangmee.mvvmarchitecture.model.Item
+import com.sangmee.mvvmarchitecture.data.model.Item
 
 class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MoiveViewHolder>() {
     private val movieList = arrayListOf<Item>()
