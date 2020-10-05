@@ -32,10 +32,6 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.MoiveViewHolder>() {
         notifyDataSetChanged()
     }
 
-    fun clearItems() {
-        movieList.clear()
-    }
-
     class MoiveViewHolder(private val binding: MovieItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 

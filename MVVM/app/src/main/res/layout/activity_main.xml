@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
-            name="activity"
-            type="com.sangmee.mvvmarchitecture.ui.MainActivity" />
+            name="vm"
+            type="com.sangmee.mvvmarchitecture.ui.MainViewModel" />
     </data>
 
     <LinearLayout
@@ -24,15 +25,16 @@
                 android:id="@+id/et_query"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2" />
+                android:layout_weight="2"
+                android:text="@={vm.query}" />
 
             <Button
                 android:id="@+id/btn_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Search"
-                android:onClick="@{() -> activity.callMoviList()}"/>
+                android:onClick="@{() -> vm.searchMovie()}"
+                android:text="Search" />
 
         </LinearLayout>
 
@@ -41,7 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            bind:items="@{vm.movieList}" />
 
     </LinearLayout>
 </layout>
